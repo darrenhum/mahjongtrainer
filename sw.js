@@ -21,8 +21,8 @@ self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
   if (url.origin !== self.location.origin || !url.href.startsWith(self.registration.scope)) return;
   if (event.request.mode === 'navigate') {
-    event.respondWith(caches.open(CACHE_NAME).then(cache => cache.match('./index.html')).then(response => response || fetch(event.request)));
+    event.respondWith(caches.open(CACHE_NAME).then(cache => cache.match('./index.html')).then(response => response || fetch(event.request)).catch(() => fetch(event.request)));
   } else if (assetURLs.has(url.href)) {
-    event.respondWith(caches.open(CACHE_NAME).then(cache => cache.match(event.request)).then(response => response || fetch(event.request)));
+    event.respondWith(caches.open(CACHE_NAME).then(cache => cache.match(event.request)).then(response => response || fetch(event.request)).catch(() => fetch(event.request)));
   }
 });
