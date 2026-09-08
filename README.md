@@ -33,6 +33,15 @@ Browser tests serve the project at `/mahjongtrainer/` and cover lessons, answer 
 
 All asset, manifest, and service-worker paths are relative, so the site works under a project subpath. No custom domain is required. Hosting requires Pages to be enabled by a repository administrator; adding the workflow does not enable it automatically.
 
+### Troubleshoot a failed Pages setup
+
+If `actions/configure-pages` fails with `Get Pages site failed` and `Not Found`, first check that Pages is enabled:
+
+1. A repository administrator must open [Settings → Pages](https://github.com/darrenhum/mahjongtrainer/settings/pages) and select **GitHub Actions** under **Build and deployment → Source**.
+2. Return to the failed **Deploy Mahjong Path to Pages** run and select **Re-run failed jobs**.
+
+This failure occurs before the site is uploaded or deployed and does not indicate an app test failure. Setting `enablement: true` alone is not a fix: `actions/configure-pages` requires a token other than the workflow's default `GITHUB_TOKEN` to enable Pages automatically. Manual setup avoids adding a privileged token to the repository.
+
 ## Install and use offline
 
 Visit online and wait for **Ready offline**. Use **Install app** or the browser's install menu. On iPhone/iPad, use Safari → Share → Add to Home Screen. Supporting browsers can then open the entire trainer offline, including tile illustrations.
