@@ -1,0 +1,23 @@
+{
+  "name": "mahjongtrainer",
+  "version": "1.0.0",
+  "description": "Offline Hong Kong Old Style mahjong scoring trainer",
+  "private": true,
+  "scripts": {
+    "test": "node --test",
+    "test:browser": "playwright test",
+    "check": "node --check app.js && node --check content.js && node --check progress.js && node --check sw.js",
+    "start": "python3 -m http.server 4173"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darrenhum/mahjongtrainer"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@playwright/test": "1.63.0"
+  }
+}

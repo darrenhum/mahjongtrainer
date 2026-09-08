@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#163d35">
+    <meta name="description" content="Learn Hong Kong mahjong scoring patterns and practice choosing your next move.">
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="./icons/icon-192.png">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Mahjong Path · Hong Kong scoring trainer</title>
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Mahjong Path home"><span class="brand-mark" aria-hidden="true">中</span><span>mahjong<span class="brand-light">path</span></span></a>
+      <button id="rules-button" class="quiet">HK Old Style · Rules ↗</button>
+    </header>
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">A LITTLE PRACTICE. A BETTER HAND.</p>
+          <h1>See the pattern.<br><em>Find your next move.</em></h1>
+          <p class="intro">Go beyond chicken hand. Learn Hong Kong scoring patterns, then find the promising path in every hand.</p>
+          <div class="hero-tags"><span>Hong Kong Old Style</span><span>3 fan minimum</span><span>No account needed</span></div>
+        </div>
+        <div class="hero-art" aria-hidden="true"><div class="art-tile art-one">發<small>GREEN DRAGON</small></div><div class="art-tile art-two">中<small>RED DRAGON</small></div><div class="art-tile art-three">萬<small>CHARACTERS</small></div><span class="art-caption">Every hand has possibilities.</span></div>
+      </section>
+      <div class="workspace">
+        <nav class="tabs" aria-label="Trainer sections">
+          <button data-view="learn" aria-current="page">01 <span>Learn patterns</span></button>
+          <button data-view="practice">02 <span>Practice a hand</span></button>
+          <button data-view="progress">03 <span>Your progress</span></button>
+        </nav>
+        <div id="app"></div>
+      </div>
+    </main>
+    <footer><span>One hand at a time.</span><div><span id="connection" role="status"></span><button id="install-button" class="text-button">Install app</button></div></footer>
+    <p id="storage-status" class="storage-status" role="status"></p>
+    <dialog id="rules-dialog" aria-labelledby="rules-title">
+      <h2 id="rules-title">Our table rules</h2>
+      <p>Hong Kong Old Style has house-rule variations. This trainer uses the following learning rules, not a universal payout calculator.</p>
+      <dl class="rules-list"><dt>Chicken hand</dt><dd>0 fan — not enough to win here</dd><dt>All pungs</dt><dd>3 fan</dd><dt>Half flush (one suit + honors)</dt><dd>3 fan</dd><dt>Full flush (one suit, no honors)</dt><dd>7 fan</dd><dt>Each dragon pung</dt><dd>1 fan</dd><dt>Seat wind pung</dt><dd>1 fan</dd><dt>Round wind pung</dt><dd>1 fan</dd></dl>
+      <p><strong>Minimum: 3 fan.</strong> Fan are scoring units, not cash points. Payouts vary by table and are not calculated here. A pung is three identical tiles; a chow is three consecutive numbers in one suit. A standard winning hand has four sets and a pair.</p>
+      <p>All pungs can combine with a flush and value sets. Half flush and full flush never stack. A wind pung earns 2 fan if it is both your seat wind and the round wind. A pair of dragons or winds earns no set fan.</p>
+      <p>Flowers, bonus win conditions, kongs, special limit hands, and payment rules are outside this first lesson set. No flower or win-method bonuses are assumed. Scenarios are guided choices under stated assumptions, not guaranteed optimal play or a complete defensive strategy.</p>
+      <form method="dialog"><button class="primary">Back to learning</button></form>
+    </dialog>
+    <dialog id="install-dialog" aria-labelledby="install-title">
+      <h2 id="install-title">Take your practice with you</h2>
+      <p id="install-message">On Android or desktop, open your browser menu and choose Install app (or Create shortcut). On iPhone or iPad, open this site in Safari, tap Share, then Add to Home Screen.</p>
+      <p>Installation needs a supporting browser and HTTPS. Wait for “Ready offline” below before going offline. Progress stays in this browser on this device; clearing site data removes it.</p>
+      <form method="dialog"><button class="primary">Got it</button></form>
+    </dialog>
+    <noscript><p class="notice">Please enable JavaScript to use the lessons and practice trainer.</p></noscript>
+  </body>
+</html>
